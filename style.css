@@ -1,0 +1,133 @@
+/* Background animation */
+@keyframes backgroundMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    background-size: 400% 400%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: backgroundMove 10s ease-in-out infinite;
+    transition: background-color 0.5s ease;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #333;
+    margin: 0;
+    font-size: 3em;
+    animation: fadeIn 2s ease forwards;
+}
+
+.instructions {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease forwards;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    animation: fadeInUp 1.5s ease forwards;
+}
+
+.score {
+    font-size: 18px;
+    color: #333;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.choices {
+    margin: 20px 0;
+    animation: fadeInUp 2s ease forwards;
+}
+
+.choice {
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.choice i {
+    font-size: 24px;
+}
+
+.choice:hover {
+    transform: scale(1.1);
+    background-color: #f5f5f5;
+}
+
+.result p {
+    font-size: 18px;
+    color: #333;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease forwards;
+}
+
+#winner {
+    color: #ff6347;
+    font-size: 24px;
+    opacity: 0;
+    transition: color 0.5s ease;
+    animation: fadeInUp 2s ease forwards;
+}
+
+.play-again {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: none;
+    transition: background-color 0.3s ease;
+}
+
+.play-again:hover {
+    background-color: #45a049;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
